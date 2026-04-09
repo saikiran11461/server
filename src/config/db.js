@@ -1,1 +1,12 @@
-//this is for db.
+
+const mongoose = require("mongoose");
+
+const connectDb = async() =>{
+    try {
+       await mongoose.connect("mongodb://127.0.0.1:27017/hkm-newsite") 
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+module.exports = { connectDb}
